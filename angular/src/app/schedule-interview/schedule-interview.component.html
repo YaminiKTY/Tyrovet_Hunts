@@ -1,0 +1,133 @@
+<link rel="stylesheet" type="text/css" href="https://ThanushreeCU.github.io/TY_TechElevate_TrainingMaintenance_Thanushree/ty-styles-form.css">
+ <!-- <nav class="navbar navbar-expand-lg navbar-warning bg-dark ">
+    <a class="navbar-brand" href="#">TalentHunt</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                    <a class="nav-link" routerLink="/"> </a>
+                  </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="addreq"> AddRequirements </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/updatereq"> UpdateRequirement</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/gettall"> GetAllRequirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/candidateinfo"> CandidateInfo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/schedule"> ScheduleInterview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/gettallcandi"> GetAllCandidates</a>
+          </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>  -->
+  <link rel="stylesheet" type="text/css" href="https://ThanushreeCU.github.io/TY_TechElevate_TrainingMaintenance_Thanushree/ty-styles-form.css">
+  <label for="title" class="ty-font heading">Schedule Interview </label>
+  <div class="card col-lg-4 col-md-4 offset-4 mt-5">
+    <div class="card-body col-lg-10 col-md-10">
+    <form action="" #scheduleinterview='ngForm' (ngSubmit)='addInterview(scheduleinterview)' id="add"> <br>
+        <div class="form-row mt-3">
+           <div class="form-group col-md-6 ty-font user-input-wrp"> <br/>
+                <input type="datetime-local" name="createdDate" #createdDate='ngModel' ngModel id=""
+                   class="form-control" required placeholder="enter interview createdDate and time"> </div>
+           <div *ngIf="createdDate.touched && createdDate.invalid">
+               <div class="alert alert-danger" *ngIf="createdDate.errors.required"><small style="text-align: right">This field
+                       is required</small></div>
+           </div>
+        
+       <div class="form-group col-md-6 ty-font left user-input-wrp"> <br/>
+             <input type="text" name="interviewlocation" #interviewlocation='ngModel'
+            ngModel id="" class="form-control" required placeholder="enter interviewlocation">
+         </div>
+    <div *ngIf="interviewlocation.touched && interviewlocation.invalid">
+        <div class="alert alert-danger" *ngIf="interviewlocation.errors.required">
+            <small
+                style="text-align: right">This field is required</small>
+            </div>
+    </div>
+</div>
+        <div class="form-row mt-3">             
+       <div class="form-group col-md-6 ty-font user-input-wrp"> <br/>
+             <select class="form-control" id="input" name="interviewtype"
+               #interviewtype='ngModel' ngModel required>
+            <option value="" selected disabled hidden>Enter the interviewtype</option>
+            <option>Programming</option>
+            <option>Written</option>
+            <option>Aptitude</option>
+            <option>GroupDiscussion</option>
+            <option>Technical faceToface</option>
+            <option>Others</option>
+        </select> 
+    </div>
+    <div *ngIf="interviewtype.touched && interviewtype.invalid">
+        <div class="alert alert-danger" *ngIf="interviewtype.errors.required"><small style="text-align: right">
+                This field is required</small>
+            </div>
+    </div>
+   <div class="form-group col-md-6 ty-font left user-input-wrp"> <br/> 
+        <select class="form-control" id="input" name="skills" #skills='ngModel'
+        ngModel required>
+        <option value="" selected disabled hidden>Enter the skills</option>
+        <option>Java Full Stack</option>
+        <option>Mean Stack</option>
+        <option>DataScience</option>
+        <option>Mearn</option>
+        <option>Dot Net</option>
+        <option>Others</option>
+    </select> 
+</div>
+<div *ngIf="skills.touched && skills.invalid">
+    <div class="alert alert-danger" *ngIf="skills.errors.required"><small style="text-align: right"> This
+            field is required</small></div>
+</div>
+    </div>
+        <div class="form-row mt-3">         
+          <div class="form-group col-md-6 ty-font user-input-wrp"> <br/> 
+            <select class="form-control" id="input" name="status" #status='ngModel' ngModel required>
+            <option value="" selected disabled hidden>Enter the status</option>
+            <option>Selected</option>
+            <option>In Progress</option>
+            <option>Hold</option>
+            <option>Rejected</option>
+           </select>
+    </div>              
+        <div *ngIf="status.touched && status.invalid">
+            <div class="alert alert-danger" *ngIf="status.errors.required"><small style="text-align: right">This
+                    field is required</small>
+                </div>
+        </div>
+       <div class="form-group col-md-6 ty-font left user-input-wrp"> <br/> <input type="text" name="remarks" #remarks='ngModel' ngModel id=""
+            class="form-control" required placeholder="enter remarks"> </div>
+    <div *ngIf="remarks.touched && remarks.invalid">
+        <div class="alert alert-danger" *ngIf="remarks.errors.required"><small style="text-align: right">This
+                field is required</small></div>
+    </div>
+        </div>   
+        
+        <div class="form-row mt-3">
+           <div class="form-group col-md-6 ty-font user-input-wrp"> <br/> <input type="text" name="interviewer" #interviewer='ngModel' ngModel id=""
+                    class="form-control" required placeholder="enter interviewer"> </div>
+            <div *ngIf="interviewer.touched && interviewer.invalid">
+                <div class="alert alert-danger" *ngIf="interviewer.errors.required"><small
+                        style="text-align: right">This field is required</small></div>
+            </div>
+        </div>
+        <div> <button type="submit" [disabled]='scheduleinterview.invalid'
+                class="btn btn-outline-warning float-right">ScheduleInterview</button> </div>
+    </form>
+</div>
+  </div>

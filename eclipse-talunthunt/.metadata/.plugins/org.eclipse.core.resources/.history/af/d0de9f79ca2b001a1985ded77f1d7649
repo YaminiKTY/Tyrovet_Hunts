@@ -1,0 +1,42 @@
+package com.tyss.talunthunt.dto;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Entity
+@Table(name="month_Bean")
+@Data
+public class MonthlyBean {
+	@Id
+	@GeneratedValue
+	private int monthId;
+@Column
+	private String jan;
+@Column
+	private String feb;
+@Column
+	private String mar;
+@Column
+	private String apr;
+@Column
+	private String may;
+@Column
+	private String jun;
+@Column
+	private String jul;
+@Column
+	private String aug;
+	@Column
+	private String sep;
+	@Column
+	private String oct;
+	@Column
+	private String nov;
+	@Column
+	private String dec;
+}

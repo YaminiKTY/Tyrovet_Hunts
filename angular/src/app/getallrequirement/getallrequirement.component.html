@@ -1,0 +1,74 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-warning bg-dark ">
+  <a class="navbar-brand" href="#">TalentHunt</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+                  <a class="nav-link" routerLink="/"> </a>
+                </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="addreq"> AddRequirements </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/updatereq"> UpdateRequirement</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/gettall"> GetAllRequirement</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/candidateinfo"> CandidateInfo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/schedule"> ScheduleInterview</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/gettallcandi"> GetAllCandidates</a>
+        </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav> -->
+<div class="container">
+        <table class="table">
+                <thead class="thead-inverse bg-light">
+                  <tr >
+                    <th>Sl No</th>
+                    <th>clientId</th>
+                    <th>client</th>
+                    <th>technology</th>
+                    <th>yoe</th>
+                    <th>location</th>
+                    <th>nopositions</th>
+                    <th>openingdate</th>
+                    <th>closingdate</th>
+                    <th>role</th>
+                    <th>rate</th>
+                    <th>contact</th>
+                    <th>jobdescription</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-light"></tbody>
+                 <tr *ngFor='let add of req;index as i' (click)="gotorequirment(add)" >  
+                    <td>{{i+1}}</td>
+                    <td>{{add.clientId}}</td>
+                    <td>{{add.client}}</td>
+                    <td>{{add.technology}}</td>
+                    <td>{{add.yoe}}</td>
+                    <td>{{add.location}}</td>
+                    <td>{{add.nopositions}}</td>
+                    <td>{{add.openingdate}}</td>
+                    <td>{{add.closingdate}}</td>
+                    <td>{{add.role}}</td>
+                    <td>{{add.rate}}</td>
+                    <td>{{add.contact}}</td>
+                    <td>{{add.jobdescription}}</td>
+                    <td><button class="btn btn-warning" (click)='updateRequirement(add)'>Update</button></td>
+                </tr>
+              </table>
+</div>

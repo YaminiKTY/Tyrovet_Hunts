@@ -1,0 +1,109 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-warning bg-dark ">
+    <a class="navbar-brand" href="#">TalentHunt</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                    <a class="nav-link" routerLink="/"> </a>
+                  </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="addreq"> AddRequirements </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/updatereq"> UpdateRequirement</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/gettall"> GetAllRequirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/candidateinfo"> CandidateInfo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/schedule"> ScheduleInterview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/gettallcandi"> GetAllCandidates</a>
+          </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav> -->
+
+  <link rel="stylesheet" type="text/css" href="https://ThanushreeCU.github.io/TY_TechElevate_TrainingMaintenance_Thanushree/ty-styles-form.css">
+
+  <label for="title" class="ty-font heading">Add Requirements</label>
+  <div class="card col-lg-4 col-md-4 offset-4 mt-5">
+  <div class="card-body col-lg-10 col-md-10">
+<!-- <button class="btn btn-primary float-right mt-5 mr-5" (click)=goHome()>Home</button> -->
+            <form action="" #reqform='ngForm' (ngSubmit)='addRequirments(reqform)' class="form-container">
+                <div class="form-row mt-3">
+                     <div class="form-group col-md-6 ty-font user-input-wrp"> <br/>
+                        <input type="text" name='client' #client='ngModel' ngModel class="form-control"
+                            placeholder="Enter Client Name Here">
+                    </div>
+                     <div class="form-group col-md-6 ty-font left user-input-wrp"> <br/>
+                        <input type="text" name='technology' #technology='ngModel' ngModel class="form-control"
+                            placeholder="Enter Technology Name Here">
+                    </div>
+                    
+                </div>
+                <div class="form-row mt-3">
+                     <div class="form-group col-md-6 ty-font user-input-wrp"> <br/>
+                        <input type="number" name='yoe' #yoe='ngModel' ngModel class="form-control"
+                            placeholder="Enter YearOfExperience Here">
+                    </div>
+                     <div class="form-group col-md-6 ty-font left user-input-wrp"> <br/>
+                        <input type="text" name='location' #location='ngModel' ngModel class="form-control"
+                            placeholder="Enter  Location Name Here">
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                     <div class="form-group col-md-6 ty-font user-input-wrp"> <br/>
+                        <input type="number" name='nopositions' #nopositions='ngModel' ngModel class="form-control"
+                            placeholder="Enter No Of Positions Here">
+                    </div>
+                     <div class="form-group col-md-6 ty-font left user-input-wrp"> <br/>
+                        <input type="date" name='openingdate' #openingdate='ngModel' ngModel class="form-control"
+                            placeholder="Enter Opening Date Here">
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                     <div class="form-group col-md-6 ty-font user-input-wrp"> <br/>
+                        <input type="date" name='closingdate' #closingdate='ngModel' ngModel class="form-control"
+                            placeholder="Enter closing Date Here">
+                    </div>
+                     <div class="form-group col-md-6 ty-font left user-input-wrp"> <br/>
+                        <input type="text" name='role' #role='ngModel' ngModel class="form-control"
+                            placeholder="Enter Role Here">
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                     <div class="form-group col-md-6 ty-font user-input-wrp"> <br/>
+                        <input type="number" name='rate' #rate='ngModel' ngModel class="form-control"
+                            placeholder="Enter Rate Here">
+                    </div>
+                     <div class="form-group col-md-6 ty-font left user-input-wrp"> <br/>
+                        <input type="text" name='contact' #contact='ngModel' ngModel class="form-control"
+                            placeholder="Enter Contact Name Here">
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <textarea type="text" name='jobdescription' #jobdescription='ngModel' ngModel class="form-control"
+                        placeholder="Enter Job Description Here"></textarea>
+                </div>
+                <div class="float-right ty-create-button">
+                    <button type="submit" class="btn btn-outline-primary ty-font">AddRequirement</button></div>
+                  <div class="float-right ty-reset-button">
+                    <button type="submit"  class="btn btn-outline-secondary ty-font">Reset</button></div>
+                <div class="form-group">
+                    <h5 style="color:green;text-align: center;">{{msg}}</h5>
+                </div>
+            </form>
+        </div>
+</div>

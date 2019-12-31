@@ -1,0 +1,86 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-warning bg-dark ">
+    <a class="navbar-brand" href="#">TalentHunt</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                    <a class="nav-link" routerLink="/"> </a>
+                  </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="addreq"> AddRequirements </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/updatereq"> UpdateRequirement</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/gettall"> GetAllRequirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/candidateinfo"> CandidateInfo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/schedule"> ScheduleInterview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/gettallcandi"> GetAllCandidates</a>
+          </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav> -->
+
+
+  <link rel="stylesheet" type="text/css" href="https://ThanushreeCU.github.io/TY_TechElevate_TrainingMaintenance_Thanushree/ty-styles-form.css">
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-md-4 offset-md-3">
+            <form action="" #reqform='ngForm' (ngSubmit)='addreq(reqform)' class="form-container">
+                <h1>Update Requirment</h1>
+                <div class="form-group"> 
+                    <input type="text" name='clientId' #clientId='ngModel'
+                        [(ngModel)]='requirementService.SelectedRequirement.clientId' class="form-control"> </div>
+                <div class="form-group">
+                     <input type="text" name='client' #client='ngModel'
+                        [(ngModel)]='requirementService.SelectedRequirement.client' class="form-control"> </div>
+                <div class="form-group">
+                     <input type="text" name='technology' #technology='ngModel'
+                        [(ngModel)]='requirementService.SelectedRequirement.technology' class="form-control"> </div>
+                <div class="form-group"> 
+                    <input type="text" name='yoe' #yoe='ngModel'
+                        [(ngModel)]='requirementService.SelectedRequirement.yoe' class="form-control"> </div>
+                <div class="form-group"> 
+                    <input type="text" name='location' #location='ngModel'
+                        [(ngModel)]='requirementService.SelectedRequirement.location' class="form-control"> </div>
+                <div class="form-group"> 
+                    <input type="number" name='nopositions' #nopositions='ngModel'
+                        [(ngModel)]='requirementService.SelectedRequirement.nopositions' class="form-control"> </div>
+                <div class="form-group"> 
+                    <input type="text" name='openingdate' #openingdate='ngModel'
+                        [(ngModel)]='requirementService.SelectedRequirement.openingdate' class="form-control"> </div>
+                <div class="form-group"> 
+                    <input type="text" name='closingdate' #closingdate='ngModel'
+                        [(ngModel)]='requirementService.SelectedRequirement.closingdate' class="form-control"> </div>
+                <div class="form-group">
+                     <input type="text" name='role' #role='ngModel'
+                        [(ngModel)]='requirementService.SelectedRequirement.role' class="form-control"> </div>
+                <div class="form-group"> 
+                    <input type="text" name='rate' #rate='ngModel'
+                        [(ngModel)]='requirementService.SelectedRequirement.rate' class="form-control"> </div>
+                <div class="form-group"> 
+                    <input type="text" name='contact' #contact='ngModel'
+                        [(ngModel)]='requirementService.SelectedRequirement.contact' class="form-control"> </div>
+                <div class="form-group">
+                     <input type="text" name='jobdescription' #jobdescription='ngModel'
+                        [(ngModel)]='requirementService.SelectedRequirement.jobdescription' class="form-control"> </div>
+                <div class="form-group">
+                     <button type="submit"
+                        class="btn btn-dark col-md-6 form-control float-right">Updated</button> </div>
+            </form>
+        </div>
+    </div>

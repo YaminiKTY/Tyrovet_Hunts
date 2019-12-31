@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col col-md-6">
+        <div >
+            <figure class="highcharts-figure">
+                <div id="container"></div>
+            </figure>
+        </div>
+    </div>
+    <div class="col col-md-6">
+        <highcharts-chart [Highcharts]="highcharts" [options]="chartOptions1"
+            style="width: 100%; height: 400px; display: block;">
+        </highcharts-chart>
+    </div>
+</div>
+<div class="row">
+    <div class="col col-md-6">
+        <highcharts-chart [Highcharts]="highcharts" [options]="skillBasedSourcing"
+            style="width: 100%; height: 400px; display: block;">
+        </highcharts-chart>
+    </div>
+    <div class="col col-md-6">
+        <highcharts-chart [Highcharts]="highcharts" [options]="fresherExperience"
+            style="width: 100%; height: 400px; display: block;">
+        </highcharts-chart>
+    </div>
+</div>
+<div class="row">
+    <div class="col col-md-6">
+        <highcharts-chart [Highcharts]="highcharts" [options]="candidateStatus"
+            style="width: 100%; height: 400px; display: block;">
+        </highcharts-chart>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+package com.tyss.talunthunt.dto;
+
+public class MonthlyBean {
+
+}

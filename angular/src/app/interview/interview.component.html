@@ -1,0 +1,196 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-warning bg-dark ">
+    <a class="navbar-brand" href="#">TalentHunt</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                    <a class="nav-link" routerLink="/"> </a>
+                  </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="addreq"> AddRequirements </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/updatereq"> UpdateRequirement</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/gettall"> GetAllRequirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/candidateinfo"> CandidateInfo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/schedule"> ScheduleInterview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/gettallcandi"> GetAllCandidates</a>
+          </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+</nav> -->
+<link rel="stylesheet" type="text/css" href="https://ThanushreeCU.github.io/TY_TechElevate_TrainingMaintenance_Thanushree/ty-styles-form.css">
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-md-4 offset-md-3">
+            <form action="" #reqform='ngForm' (ngSubmit)='addcandii(reqform)' class="form-container">
+                <h1>Create Schedule</h1>
+                <div class="form-row mt-3">
+                    <div class="form-group col-md-6">
+                    <input type="number" name='candidateID' #candidateID='ngModel'
+                        [(ngModel)]='requirementService.SelectedCandidate.candidateID' class="form-control"> </div>
+                        <div class="form-group col-md-6">   
+                     <input type="text" name='candidateName' #candidateName='ngModel'
+                        [(ngModel)]='requirementService.SelectedCandidate.candidateName' class="form-control"> </div>
+                    </div>
+                
+                <div class="form-row mt-3">             
+                    <div class="form-group col-md-6">
+                
+                     <input type="text" name='email' #email='ngModel'
+                        [(ngModel)]='requirementService.SelectedCandidate.email' class="form-control"> </div>
+                        <div class="form-group col-md-6">
+                    <input type="text" name='candidateNo' #candidateNo='ngModel'
+                        [(ngModel)]='requirementService.SelectedCandidate.candidateNo' class="form-control"> </div>
+                </div>
+                <div class="form-row mt-3">             
+                    <div class="form-group col-md-6">
+                    <input type="text" name='govtId' #govtId='ngModel'
+                        [(ngModel)]='requirementService.SelectedCandidate.govtId' class="form-control"> </div>
+                        <div class="form-group col-md-6"> 
+                            <input type="text" name='relocate' #relocate='ngModel'
+                                [(ngModel)]='requirementService.SelectedCandidate.relocate' class="form-control"> </div>
+                            </div> 
+                            <div class="form-row mt-3">             
+                                <div class="form-group col-md-6">     
+                    <input type="text" name='candidateType' #candidateType='ngModel'
+                        [(ngModel)]='requirementService.SelectedCandidate.candidateType' class="form-control"> </div>
+                        <div class="form-group col-md-6"> 
+                    <input type="text" name='yearOfPassing' #yearOfPassing='ngModel'
+                        [(ngModel)]='requirementService.SelectedCandidate.yearOfPassing' class="form-control"> </div>
+                            </div>
+                            <div class="form-row mt-3">             
+                                <div class="form-group col-md-6">      
+                    <input type="text" name='percentage' #percentage='ngModel'
+                        [(ngModel)]='requirementService.SelectedCandidate.percentage' class="form-control"> </div>
+                        <div class="form-group col-md-6"> 
+                     <input type="text" name='currentDesignation' #currentDesignation='ngModel'
+                        [(ngModel)]='requirementService.SelectedCandidate.currentDesignation' class="form-control"> </div>
+                            </div>
+                            <div class="form-row mt-3">             
+                                <div class="form-group col-md-6">  
+
+                    <input type="text" name='yearOfExperience' #yearOfExperience='ngModel'
+                        [(ngModel)]='requirementService.SelectedCandidate.yearOfExperience' class="form-control"> </div>
+                        <div class="form-group col-md-6">  
+                    <input type="text" name='noticePeriod' #noticePeriod='ngModel'
+                        [(ngModel)]='requirementService.SelectedCandidate.noticePeriod' class="form-control"> </div>
+                            </div>
+                            <div class="form-row mt-3">             
+                                <div class="form-group col-md-6">    
+                     <input type="text" name='currentCtc' #currentCtc='ngModel'
+                        [(ngModel)]='requirementService.SelectedCandidate.currentCtc' class="form-control"> </div>
+                        <div class="form-group col-md-6">  
+                            <input type="text" name='expectedCtc' #expectedCtc='ngModel'
+                               [(ngModel)]='requirementService.SelectedCandidate.expectedCtc' class="form-control"> </div>
+                            </div>
+                               <div class="form-row mt-3">
+                                <div class="form-group col-md-6">
+                                    <input type="datetime-local" name="createdDate" #createdDate='ngModel' ngModel id=""
+                                       class="form-control" required placeholder="enter interview createdDate and time"> </div>
+                               <div *ngIf="createdDate.touched && createdDate.invalid">
+                                   <div class="alert alert-danger" *ngIf="createdDate.errors.required">
+                                       <small style="text-align: right">This field is required</small></div>
+                               </div>
+                            
+                            <div class="form-group col-md-6">
+                                 <input type="text" name="interviewlocation" #interviewlocation='ngModel'
+                                ngModel id="" class="form-control" required placeholder="enter interviewlocation">
+                             </div>
+                        <div *ngIf="interviewlocation.touched && interviewlocation.invalid">
+                            <div class="alert alert-danger" *ngIf="interviewlocation.errors.required">
+                                <small
+                                    style="text-align: right">This field is required</small>
+                                </div>
+                        </div>
+                    </div>
+                            <div class="form-row mt-3">             
+                            <div class="form-group col-md-6">
+                                 <select class="form-control" id="input" name="interviewtype"
+                                   #interviewtype='ngModel' ngModel required>
+                                <option value="" selected disabled hidden>Enter the interviewtype</option>
+                                <option>Programming</option>
+                                <option>Written</option>
+                                <option>Aptitude</option>
+                                <option>GroupDiscussion</option>
+                                <option>Technical faceToface</option>
+                                <option>Others</option>
+                            </select> 
+                        </div>
+                        <div *ngIf="interviewtype.touched && interviewtype.invalid">
+                            <div class="alert alert-danger" *ngIf="interviewtype.errors.required"><small style="text-align: right">
+                                    This field is required</small>
+                                </div>
+                        </div>
+                        <div class="form-group col-md-6"> 
+                            <select class="form-control" id="input" name="skills" #skills='ngModel'
+                            ngModel required>
+                            <option value="" selected disabled hidden>Enter the skills</option>
+                            <option>Java Full Stack</option>
+                            <option>Mean Stack</option>
+                            <option>DataScience</option>
+                            <option>Mearn</option>
+                            <option>Dot Net</option>
+                            <option>Others</option>
+                        </select> 
+                    </div>
+                    <div *ngIf="skills.touched && skills.invalid">
+                        <div class="alert alert-danger" *ngIf="skills.errors.required"><small style="text-align: right"> This
+                                field is required</small></div>
+                    </div>
+                        </div>
+                            <div class="form-row mt-3">         
+                               <div class="form-group col-md-6"> 
+                                <select class="form-control" id="input" name="status" #status='ngModel' ngModel required>
+                                <option value="" selected disabled hidden>Enter the status</option>
+                                <option>Selected</option>
+                                <option>In Progress</option>
+                                <option>Hold</option>
+                                <option>Rejected</option>
+                               </select>
+                        </div>              
+                            <div *ngIf="status.touched && status.invalid">
+                                <div class="alert alert-danger" *ngIf="status.errors.required"><small style="text-align: right">This
+                                        field is required</small>
+                                    </div>
+                            </div>
+                            <div class="form-group col-md-6"> 
+                                <input type="text" name="remarks" #remarks='ngModel' ngModel id=""
+                                class="form-control" required placeholder="enter remarks"> </div>
+                        <div *ngIf="remarks.touched && remarks.invalid">
+                            <div class="alert alert-danger" *ngIf="remarks.errors.required">
+                                <small style="text-align: right">This
+                                    field is required</small></div>
+                        </div>
+                            </div>   
+                            
+                            <div class="form-row mt-3">
+                                <div class="form-group col-md-6"> <input type="text" name="interviewer" #interviewer='ngModel' ngModel id=""
+                                        class="form-control" required placeholder="enter interviewer"> </div>
+                                <div *ngIf="interviewer.touched && interviewer.invalid">
+                                    <div class="alert alert-danger" *ngIf="interviewer.errors.required"><small
+                                            style="text-align: right">This field is required</small></div>
+                                </div>
+                            </div>
+
+                <div class="form-group">
+                     <button type="submit"
+                        class="btn btn-dark col-md-6 form-control float-right">Submit</button> </div>
+            </form>
+        </div>
+    </div> 

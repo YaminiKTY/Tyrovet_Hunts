@@ -1,0 +1,9 @@
+package com.tyss.talunthunt.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.tyss.talunthunt.dto.RequirementBean;
+
+public interface TalentHuntRepository extends JpaRepository<RequirementBean	, String>{
+
+}

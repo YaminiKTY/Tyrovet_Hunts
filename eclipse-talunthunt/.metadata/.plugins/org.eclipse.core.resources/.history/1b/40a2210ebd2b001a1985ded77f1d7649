@@ -1,0 +1,5 @@
+package com.tyss.talunthunt.dao;
+
+public interface TalentHuntRepository {
+
+}
